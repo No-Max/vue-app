@@ -1,18 +1,36 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <nav id="nav">
+
+    </nav>
+    <Canvas />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import Canvas from "@/components/Canvas.vue";
 
 export default {
   name: "Home",
   components: {
-    HelloWorld,
+    Canvas,
   },
 };
 </script>
+
+<style lang="scss">
+#nav {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
+}
+</style>
