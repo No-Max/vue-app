@@ -1,19 +1,31 @@
 <template>
   <div class="home">
     <nav id="nav">
-
+      <SettingsPanel @onChange="onSettigsChange" />
     </nav>
-    <Canvas />
+    <Canvas :settings="settings" />
   </div>
 </template>
 
 <script>
 import Canvas from "@/components/Canvas.vue";
+import SettingsPanel from "@/components/SettingsPanel.vue";
 
 export default {
   name: "Home",
   components: {
     Canvas,
+    SettingsPanel,
+  },
+  data() {
+    return {
+      settings: undefined,
+    };
+  },
+  methods: {
+    onSettigsChange(settings) {
+      this.settings = settings;
+    },
   },
 };
 </script>
